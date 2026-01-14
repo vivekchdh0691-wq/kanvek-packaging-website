@@ -230,3 +230,66 @@ table th {
     font-size: 16px;
   }
 }
+/* ===== FIXED HOME PAGE BANNER OVERRIDE ===== */
+
+.hero.banner {
+  background:
+    linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.85),
+      rgba(15, 23, 42, 0.55),
+      rgba(15, 23, 42, 0.25)
+    ),
+    url("../images/home-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 120px 0;
+  text-align: left;
+}
+
+/* Ensure banner text looks correct */
+.hero.banner h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.hero.banner p {
+  color: #e5e7eb;
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+/* Buttons on banner */
+.hero.banner .primary {
+  background: #0f766e;
+  color: #ffffff;
+}
+
+.hero.banner .secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.hero.banner .secondary:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Mobile fix */
+@media (max-width: 768px) {
+  .hero.banner {
+    padding: 90px 0;
+  }
+
+  .hero.banner h1 {
+    font-size: 30px;
+  }
+
+  .hero.banner p {
+    font-size: 16px;
+  }
+}
