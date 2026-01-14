@@ -175,3 +175,58 @@ table th {
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
+/* ===== HOME PAGE BANNER (INDUSTRIAL STYLE) ===== */
+
+.banner {
+  background:
+    linear-gradient(
+      to right,
+      rgba(15, 23, 42, 0.85),
+      rgba(15, 23, 42, 0.55),
+      rgba(15, 23, 42, 0.25)
+    ),
+    url("../images/home-banner.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 110px 0;
+}
+
+.banner h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.banner p {
+  color: #e5e7eb;
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.banner .secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+.banner .secondary:hover {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+  .banner {
+    padding: 80px 0;
+  }
+
+  .banner h1 {
+    font-size: 30px;
+  }
+
+  .banner p {
+    font-size: 16px;
+  }
+}
