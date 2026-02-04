@@ -1,98 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Kanvek Packaging Solutions | Reinforced Water Activated Tape</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Manufacturer of reinforced water activated tape for secure, tamper-evident and eco-friendly packaging.">
+  <meta name="description" content="High-strength, tamper-evident, eco-friendly reinforced water activated tape for secure industrial, export, and e-commerce packaging."/>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet"/>
+  
+  <style>
+    :root {
+      --primary: #1e40af;       /* deep blue - trust/industrial */
+      --primary-dark: #1e3a8a;
+      --accent: #10b981;        /* emerald - eco-friendly */
+      --gray: #4b5563;
+      --light: #f9fafb;
+      --dark: #111827;
+    }
 
-  <link rel="stylesheet" href="css/style.css">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* Header / Navbar */
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .nav-links a {
+      margin-left: 2rem;
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(rgba(30, 64, 175, 0.85), rgba(30, 64, 175, 0.75)), url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000') center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 10rem 2rem 8rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.1;
+    }
+
+    .hero p {
+      font-size: 1.35rem;
+      max-width: 700px;
+      margin: 0 auto 2.5rem;
+      opacity: 0.95;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      padding: 1rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.5rem;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(16,185,129,0.3);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(16,185,129,0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 0;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      color: var(--primary-dark);
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .feature-card {
+      background: white;
+      padding: 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .feature-card h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    .cta-section {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 8rem 2rem;
+    }
+
+    .cta-section h2 {
+      color: white;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: #9ca3af;
+      padding: 4rem 0 2rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero { padding: 7rem 1.5rem 5rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .nav-links { display: none; } /* You can add hamburger later */
+    }
+  </style>
 </head>
-
 <body>
 
-<header class="header">
-  <div class="container nav">
-    <div class="logo">Kanvek Packaging Solutions</div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="applications.html">Applications</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">Kanvek Packaging</div>
+        <div class="nav-links">
+          <a href="#features">Features</a>
+          <a href="#contact">Contact</a>
+          <a href="products.html">Products</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
-<section class="hero">
-  <div class="container">
-    <h1>Reinforced Water Activated Tape</h1>
-    <p>
-      High-strength, tamper-evident and eco-friendly carton sealing solution
-      for industrial, export and e-commerce packaging.
-    </p>
+  <section class="hero">
+    <div class="container">
+      <h1>Reinforced Water Activated Tape</h1>
+      <p>High-strength • Tamper-evident • Eco-friendly<br>Secure carton sealing solution trusted in industrial, export, and e-commerce packaging.</p>
+      
+      <a href="https://wa.me/917011372679?text=Hello%2C%20I%20need%20details%20of%20Reinforced%20Water%20Activated%20Tape" class="btn">Contact on WhatsApp</a>
+      <a href="products.html" class="btn btn-outline">Explore Products</a>
+    </div>
+  </section>
 
-    <div class="hero-buttons">
-      <a href="products.html" class="btn primary">View Products</a>
-      <a href="https://wa.me/91XXXXXXXXXX?text=Hello%2C%20I%20am%20interested%20in%20Reinforced%20Water%20Activated%20Tape"
-         target="_blank" class="btn secondary">
-        WhatsApp Us
+  <section id="features">
+    <div class="container">
+      <h2>Why Choose Kanvek Reinforced Tape?</h2>
+      <div class="features">
+        <div class="feature-card">
+          <h3>Superior Strength</h3>
+          <p>Fiberglass reinforced construction delivers exceptional holding power — perfect for heavy and oversized cartons.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Tamper Evident Security</h3>
+          <p>Forms a permanent bond that clearly shows any attempt at opening or pilferage.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Eco-Conscious Choice</h3>
+          <p>Paper-based, fully recyclable alternative to plastic tapes — supports your sustainability goals.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="contact">
+    <div class="container">
+      <h2>Ready for Reliable, Secure Packaging?</h2>
+      <p style="font-size:1.3rem; max-width:700px; margin:0 auto 2.5rem;">
+        Get in touch for bulk pricing, custom widths/lengths, or samples. Fast response guaranteed.
+      </p>
+      <a href="https://wa.me/917011372679?text=Hello%2C%20I%20need%20details%20of%20Reinforced%20Water%20Activated%20Tape" class="btn" style="background:white; color:var(--primary); box-shadow:0 4px 15px rgba(255,255,255,0.4);">
+        Message us on WhatsApp Now
       </a>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="intro">
-  <div class="container">
-    <h2>Secure Packaging for Demanding Applications</h2>
-    <p>
-      Kanvek Packaging Solutions manufactures reinforced water activated tape
-      designed to provide permanent adhesion, carton integrity, and tamper
-      evidence. Our products are widely used in warehousing, logistics,
-      e-commerce fulfillment, and export packaging.
-    </p>
-  </div>
-</section>
-
-<section class="highlights">
-  <div class="container grid">
-    <div class="card">
-      <h3>High Strength</h3>
-      <p>Fiberglass reinforced for superior holding power on heavy cartons.</p>
+  <footer>
+    <div class="container">
+      <p>©️ 2026 Kanvek Packaging Solutions. All rights reserved.</p>
+      <p style="margin-top:1rem;">
+        <a href="https://wa.me/917011372679">+91 70113 72679</a> • Reinforced Water Activated Tape Specialists
+      </p>
     </div>
-    <div class="card">
-      <h3>Tamper Evident</h3>
-      <p>Permanent bond with cartons helps prevent pilferage and tampering.</p>
-    </div>
-    <div class="card">
-      <h3>Eco-Friendly</h3>
-      <p>Paper-based, recyclable solution supporting sustainable packaging.</p>
-    </div>
-  </div>
-</section>
-
-<section class="cta">
-  <div class="container">
-    <h2>Looking for Reliable Carton Sealing?</h2>
-    <p>
-      Explore our reinforced water activated tape range or contact us
-      for bulk requirements and custom specifications.
-    </p>
-    <a href="products.html" class="btn primary">Explore Products</a>
-  </div>
-</section>
-
-<footer class="footer">
-  <div class="container">
-    © 2026 Kanvek Packaging Solutions | Reinforced Water Activated Tape Manufacturer
-  </div>
-</footer>
-
-<a class="whatsapp-float"
-   href="https://wa.me/917011372679?text=Hello%2C%20I%20need%20details%20of%20Reinforced%20Water%20Activated%20Tape"
-   target="_blank">
-  WhatsApp
-</a>
+  </footer>
 
 </body>
 </html>
