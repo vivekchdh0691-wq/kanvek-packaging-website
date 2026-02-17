@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+  document.querySelectorAll('.dropbtn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const content = btn.nextElementSibling;
+      content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kanvek Packaging Solutions | Reinforced Water Activated Tape</title>
