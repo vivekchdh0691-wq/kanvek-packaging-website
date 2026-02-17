@@ -297,7 +297,7 @@ footer {
     }
   }
 }
-/* Dropdown Menu */
+/* Dropdown Menu - Improved */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -309,8 +309,7 @@ footer {
   font-weight: 500;
   border: none;
   cursor: pointer;
-  padding: 0;
-  margin-left: 2rem;
+  padding: 0 1.5rem;
   font-size: inherit;
   text-decoration: none;
 }
@@ -319,28 +318,29 @@ footer {
   display: none;
   position: absolute;
   background-color: white;
-  min-width: 220px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  min-width: 240px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   border-radius: 6px;
-  z-index: 1;
+  z-index: 999;
   top: 100%;
   left: 0;
+  margin-top: 4px;
 }
 
 .dropdown-content a {
   color: var(--dark);
-  padding: 12px 16px;
+  padding: 12px 20px;
   text-decoration: none;
   display: block;
   font-size: 1rem;
-  margin: 0;
 }
 
 .dropdown-content a:hover {
-  background-color: #f5f5f5;
+  background-color: #f0f0f0;
   color: var(--primary);
 }
 
+/* Show dropdown on hover (desktop) */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -349,39 +349,34 @@ footer {
   color: var(--primary);
 }
 
-/* Mobile adjustments for dropdown */
+/* Mobile: show dropdown items when tapping "Products" in menu */
 @media (max-width: 768px) {
-  .dropdown {
-    width: 100%;
+  .dropbtn {
+    display: block;
+    padding: 1rem 0;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
   }
 
-  .dropbtn {
-    margin-left: 0;
-    padding: 1rem 0;
-    display: block;
+  .dropdown-content {
+    position: relative;
+    box-shadow: none;
+    background: #f9f9f9;
+    display: none; /* hidden until tapped */
+  }
+
+  .dropdown-content a {
+    padding: 1rem 3rem;
     text-align: center;
     border-bottom: 1px solid #eee;
   }
 
-  .dropdown-content {
-    position: static;
-    box-shadow: none;
-    background: #f9f9f9;
-    border-radius: 0;
-  }
-
-  .dropdown-content a {
-    padding: 1rem 2rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* Show dropdown content when parent is open (via checkbox hack) */
-  .dropdown .dropdown-content {
-    display: none;
-  }
-
-  /* Optional: show subitems when tapping Products in mobile menu */
-  #menu-toggle:checked ~ .nav-links .dropdown .dropdown-content {
+  /* Show sub-menu when parent dropdown is "active" */
+  /* We use :focus-within or checkbox trick for mobile */
+  .dropdown:focus-within .dropdown-content,
+  .dropdown[open] .dropdown-content {
     display: block;
   }
 }
