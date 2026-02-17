@@ -349,8 +349,74 @@ footer {
   color: var(--primary);
 }
 
-/* Mobile: show dropdown items when tapping "Products" in menu */
+/* Dropdown - Desktop hover + Mobile toggle with hamburger */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background: none;
+  color: var(--gray);
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  padding: 0 1.5rem;
+  font-size: inherit;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 240px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 999;
+  top: 100%;
+  left: 0;
+  margin-top: 4px;
+}
+
+.dropdown-content a {
+  color: var(--dark);
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Desktop hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  color: var(--primary);
+}
+
+/* Mobile: Make dropdown toggle when tapping Products in menu */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
   .dropbtn {
     display: block;
     padding: 1rem 0;
@@ -358,13 +424,14 @@ footer {
     text-align: center;
     border-bottom: 1px solid #eee;
     cursor: pointer;
+    color: var(--gray);
   }
 
   .dropdown-content {
     position: relative;
     box-shadow: none;
     background: #f9f9f9;
-    display: none; /* hidden until tapped */
+    display: none; /* hidden by default */
   }
 
   .dropdown-content a {
@@ -373,10 +440,14 @@ footer {
     border-bottom: 1px solid #eee;
   }
 
-  /* Show sub-menu when parent dropdown is "active" */
-  /* We use :focus-within or checkbox trick for mobile */
+  /* Show dropdown content when Products is tapped (using focus-within for accessibility) */
   .dropdown:focus-within .dropdown-content,
-  .dropdown[open] .dropdown-content {
+  .dropdown:active .dropdown-content {
     display: block;
+  }
+
+  /* Optional: Better tap feedback */
+  .dropbtn:active {
+    color: var(--primary);
   }
 }
