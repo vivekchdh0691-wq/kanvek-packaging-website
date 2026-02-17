@@ -297,7 +297,7 @@ footer {
     }
   }
 }
-/* Dropdown - Desktop hover + Mobile tap toggle */
+/* Dropdown - Fixed for Mobile Tap + Desktop Hover */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -311,6 +311,7 @@ footer {
   cursor: pointer;
   padding: 0 1.5rem;
   font-size: inherit;
+  display: block; /* always block for tap area */
 }
 
 .dropdown-content {
@@ -337,7 +338,7 @@ footer {
   background-color: #f0f0f0;
 }
 
-/* Desktop: Hover to show */
+/* Desktop hover */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -346,10 +347,26 @@ footer {
   color: var(--primary);
 }
 
-/* Mobile: Tap to toggle dropdown (improved) */
+/* Mobile - tap to toggle */
 @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  #menu-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
   .dropbtn {
-    display: block;
     padding: 1rem 0;
     margin: 0;
     text-align: center;
@@ -363,6 +380,7 @@ footer {
     box-shadow: none;
     background: #f9f9f9;
     display: none;
+    margin: 0;
   }
 
   .dropdown-content a {
@@ -371,11 +389,11 @@ footer {
     border-bottom: 1px solid #eee;
   }
 
-  /* Toggle on tap using :focus-within + active state */
+  /* Toggle visibility on tap/focus */
   .dropdown:focus-within .dropdown-content,
   .dropdown:active .dropdown-content,
-  .dropdown .dropbtn:active ~ .dropdown-content {
-    display: block;
+  .dropbtn:active + .dropdown-content {
+    display: block !important;
   }
 
   .dropbtn:active {
