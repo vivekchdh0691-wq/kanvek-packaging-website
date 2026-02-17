@@ -1,177 +1,115 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+:root {
+  --primary: #1e40af;
+  --accent: #10b981;
+  --gray: #4b5563;
+  --light: #f9fafb;
+  --dark: #111827;
 }
 
+* { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  color: #1f2937;
-  line-height: 1.6;
-  background: #ffffff;
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height:1.6;
+  color:var(--dark);
+  background:var(--light);
 }
 
 .container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 20px;
+  max-width:1200px;
+  margin:0 auto;
+  padding:0 1.5rem;
 }
 
-/* Header */
-.header {
-  background: #0f172a;
-  padding: 18px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+header {
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.08);
+  position:sticky;
+  top:0;
+  z-index:100;
 }
 
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+nav {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1.25rem 0;
 }
 
 .logo {
-  color: #ffffff;
-  font-size: 18px;
-  font-weight: bold;
+  font-size:1.5rem;
+  font-weight:700;
+  color:var(--primary);
 }
 
-nav a {
-  color: #e5e7eb;
-  text-decoration: none;
-  margin-left: 20px;
-  font-size: 14px;
+.nav-links a {
+  margin-left:1.5rem;
+  text-decoration:none;
+  color:var(--gray);
+  font-weight:500;
 }
 
-nav a:hover {
-  color: #ffffff;
-}
+.nav-links a:hover { color:var(--primary); }
 
-/* Hero */
 .hero {
-  background: #f8fafc;
-  padding: 80px 0;
-  text-align: center;
+  background: linear-gradient(rgba(30,64,175,0.85), rgba(30,64,175,0.75)),
+              url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80') center/cover no-repeat;
+  color:white;
+  text-align:center;
+  padding:8rem 2rem 6rem;
 }
 
 .hero h1 {
-  font-size: 36px;
-  margin-bottom: 15px;
+  font-size:3rem;
+  margin-bottom:1rem;
 }
 
-.hero p {
-  font-size: 18px;
-  max-width: 750px;
-  margin: auto;
-  color: #4b5563;
-}
-
-.hero-buttons {
-  margin-top: 30px;
-}
-
-/* Buttons */
 .btn {
-  display: inline-block;
-  padding: 12px 22px;
-  border-radius: 4px;
-  font-size: 14px;
-  text-decoration: none;
-  margin: 8px;
+  display:inline-block;
+  background:var(--accent);
+  color:white;
+  padding:0.9rem 2rem;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  margin:0.5rem;
+  transition:all 0.3s;
 }
 
-.primary {
-  background: #0f766e;
-  color: #ffffff;
+.btn:hover {
+  transform:translateY(-3px);
+  box-shadow:0 6px 20px rgba(16,185,129,0.4);
 }
 
-.secondary {
-  background: #e5e7eb;
-  color: #0f172a;
-}
-
-/* Sections */
-section {
-  padding: 70px 0;
-}
-
-.intro p,
-.cta p {
-  max-width: 800px;
-  margin: auto;
-  margin-top: 15px;
-  color: #4b5563;
-}
-
-h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  font-size: 28px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+.features {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));
+  gap:2rem;
+  margin:3rem 0;
 }
 
 .card {
-  border: 1px solid #e5e7eb;
-  padding: 25px;
-  border-radius: 6px;
-  background: #ffffff;
+  background:white;
+  padding:2rem;
+  border-radius:12px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.06);
+  text-align:center;
 }
 
 .card h3 {
-  margin-bottom: 10px;
+  color:var(--primary);
+  margin-bottom:1rem;
 }
 
-/* CTA */
-.cta {
-  background: #f1f5f9;
-  text-align: center;
+.cta-section {
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:6rem 2rem;
 }
 
-/* Footer */
-.footer {
-  background: #0f172a;
-  color: #cbd5e1;
-  padding: 25px 0;
-  text-align: center;
-  font-size: 13px;
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 25px;
-}
-
-table th,
-table td {
-  border: 1px solid #d1d5db;
-  padding: 10px;
-  text-align: left;
-}
-
-table th {
-  background: #f1f5f9;
-}
-
-/* WhatsApp Floating */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25d366;
-  color: #ffffff;
-  padding: 14px 18px;
-  border-radius: 50px;
-  font-size: 14px;
-  text-decoration: none;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+footer {
+  background:var(--dark);
+  color:#9ca3af;
+  text-align:center;
+  padding:3rem 0;
 }
