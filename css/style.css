@@ -297,59 +297,7 @@ footer {
     }
   }
 }
-/* Dropdown Menu - Improved */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background: none;
-  color: var(--gray);
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  padding: 0 1.5rem;
-  font-size: inherit;
-  text-decoration: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 240px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  z-index: 999;
-  top: 100%;
-  left: 0;
-  margin-top: 4px;
-}
-
-.dropdown-content a {
-  color: var(--dark);
-  padding: 12px 20px;
-  text-decoration: none;
-  display: block;
-  font-size: 1rem;
-}
-
-.dropdown-content a:hover {
-  background-color: #f0f0f0;
-  color: var(--primary);
-}
-
-/* Show dropdown on hover (desktop) */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  color: var(--primary);
-}
-
-/* Dropdown - Desktop hover + Mobile toggle with hamburger */
+/* Dropdown - Desktop hover + Mobile tap toggle */
 .dropdown {
   position: relative;
   display: inline-block;
@@ -389,7 +337,7 @@ footer {
   background-color: #f0f0f0;
 }
 
-/* Desktop hover */
+/* Desktop: Hover to show */
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -398,25 +346,8 @@ footer {
   color: var(--primary);
 }
 
-/* Mobile: Make dropdown toggle when tapping Products in menu */
+/* Mobile: Tap to toggle dropdown (improved) */
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 1rem 0;
-    text-align: center;
-  }
-
-  #menu-toggle:checked ~ .nav-links {
-    display: flex;
-  }
-
   .dropbtn {
     display: block;
     padding: 1rem 0;
@@ -424,14 +355,14 @@ footer {
     text-align: center;
     border-bottom: 1px solid #eee;
     cursor: pointer;
-    color: var(--gray);
+    user-select: none;
   }
 
   .dropdown-content {
-    position: relative;
+    position: static;
     box-shadow: none;
     background: #f9f9f9;
-    display: none; /* hidden by default */
+    display: none;
   }
 
   .dropdown-content a {
@@ -440,96 +371,13 @@ footer {
     border-bottom: 1px solid #eee;
   }
 
-  /* Show dropdown content when Products is tapped (using focus-within for accessibility) */
+  /* Toggle on tap using :focus-within + active state */
   .dropdown:focus-within .dropdown-content,
-  .dropdown:active .dropdown-content {
+  .dropdown:active .dropdown-content,
+  .dropdown .dropbtn:active ~ .dropdown-content {
     display: block;
   }
 
-  /* Optional: Better tap feedback */
-  .dropbtn:active {
-    color: var(--primary);
-  }
-}
-/* Dropdown - Desktop & Mobile Fix */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background: none;
-  color: var(--gray);
-  font-weight: 500;
-  border: none;
-  cursor: pointer;
-  padding: 0 1.5rem;
-  font-size: inherit;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 240px;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-  border-radius: 6px;
-  z-index: 999;
-  top: 100%;
-  left: 0;
-  margin-top: 4px;
-}
-
-.dropdown-content a {
-  color: var(--dark);
-  padding: 12px 20px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #f0f0f0;
-}
-
-/* Desktop hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  color: var(--primary);
-}
-
-/* Mobile: Tap to toggle dropdown */
-@media (max-width: 768px) {
-  .dropbtn {
-    display: block;
-    padding: 1rem 0;
-    margin: 0;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-    cursor: pointer;
-  }
-
-  .dropdown-content {
-    position: relative;
-    box-shadow: none;
-    background: #f9f9f9;
-    display: none;
-  }
-
-  .dropdown-content a {
-    padding: 1rem 3rem;
-    text-align: center;
-    border-bottom: 1px solid #eee;
-  }
-
-  /* Toggle on tap/focus */
-  .dropdown:focus-within .dropdown-content {
-    display: block;
-  }
-
-  /* Visual feedback on tap */
   .dropbtn:active {
     background: #f0f0f0;
     color: var(--primary);
