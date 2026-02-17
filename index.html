@@ -12,29 +12,38 @@
 
   <!-- Updated header with hamburger menu -->
   <header>
-    <div class="container">
-      <nav>
-       <a href="/" class="logo">Kanvek Packaging</a>
-        <!-- Hamburger toggle -->
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="hamburger">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
+  <div class="container">
+    <nav>
+      <a href="/" class="logo">Kanvek Packaging</a>
 
-        <!-- Navigation links -->
-        <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="products.html">Products</a>
-          <a href="reinforced.html">Reinforced Tape</a>
-          <a href="applications.html">Applications</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
+      <!-- Hamburger toggle -->
+      <input type="checkbox" id="menu-toggle" class="menu-toggle">
+      <label for="menu-toggle" class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <!-- Navigation with dropdown -->
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+
+        <!-- Products dropdown -->
+        <div class="dropdown">
+          <a href="products.html" class="dropbtn">Products</a>
+          <div class="dropdown-content">
+            <a href="reinforced.html">Reinforced Water Activated Tape</a>
+            <a href="non-reinforced.html">Non-Reinforced Water Activated Tape</a>
+          </div>
         </div>
-      </nav>
-    </div>
-  </header>
+
+        <a href="applications.html">Applications</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
   <!-- Hero section -->
   <section class="hero">
