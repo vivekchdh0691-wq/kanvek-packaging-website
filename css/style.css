@@ -178,3 +178,107 @@ footer {
     transform: rotate(-45deg) translate(7px, -6px);
   }
 }
+/* ========================================= */
+/* Enhanced Mobile Responsiveness            */
+/* ========================================= */
+
+@media (max-width: 768px) {
+  body {
+    font-size: 16px; /* base size smaller for mobile */
+  }
+
+  .container {
+    padding: 0 1rem; /* less side padding on phones */
+  }
+
+  /* Hero - make shorter & text smaller */
+  .hero {
+    padding: 5rem 1rem 4rem !important; /* much less top/bottom space */
+  }
+
+  .hero h1 {
+    font-size: 2.2rem !important; /* smaller headline */
+    line-height: 1.2;
+  }
+
+  .hero p {
+    font-size: 1.1rem !important;
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.8rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Cards - stack naturally & reduce size */
+  .features,
+  .products-grid {
+    gap: 1.5rem !important;
+  }
+
+  .card {
+    padding: 1.5rem !important;
+  }
+
+  .card h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .card p {
+    font-size: 0.98rem !important;
+  }
+
+  /* CTA section */
+  .cta-section {
+    padding: 4rem 1rem !important;
+  }
+
+  .cta-section h2 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Footer */
+  footer {
+    padding: 2.5rem 1rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* Hamburger already handled - make sure icon is visible */
+  .hamburger {
+    width: 28px;
+    height: 20px;
+  }
+
+  .hamburger span {
+    height: 3px;
+  }
+
+  /* Prevent text overflow in paragraphs */
+  p, li {
+    word-break: break-word;
+    hyphens: auto;
+  }
+
+  /* If you have images later */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Extra small screens (very narrow phones) */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.9rem !important;
+  }
+
+  .hero p {
+    font-size: 1rem !important;
+  }
+
+  .btn {
+    padding: 0.7rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+}
