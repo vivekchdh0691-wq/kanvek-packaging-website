@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
-  document.querySelectorAll('.dropbtn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const content = btn.nextElementSibling;
-      content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
-  });
-</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kanvek Packaging Solutions | Reinforced Water Activated Tape</title>
@@ -19,43 +10,39 @@
 </head>
 <body>
 
-  <!-- Updated header with hamburger menu -->
+  <!-- Single header with hamburger + dropdown -->
   <header>
-  <div class="container">
-   <nav>
-  <a href="/" class="logo">Kanvek Packaging</a>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">Kanvek Packaging</a>
 
- 
+        <!-- Hamburger toggle -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
 
+        <!-- Navigation links with dropdown -->
+        <div class="nav-links">
+          <a href="index.html">Home</a>
 
-      <!-- Hamburger toggle -->
-      <input type="checkbox" id="menu-toggle" class="menu-toggle">
-      <label for="menu-toggle" class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </label>
-
-      <!-- Navigation with dropdown -->
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-
-        <!-- Products dropdown -->
-        <div class="dropdown">
-          <a href="products.html" class="dropbtn">Products</a>
-          <div class="dropdown-content">
-            <a href="reinforced.html">Reinforced Water Activated Tape</a>
-            <a href="non-reinforced.html">Non-Reinforced Water Activated Tape</a>
+          <div class="dropdown">
+            <span class="dropbtn">Products</span>
+            <div class="dropdown-content">
+              <a href="reinforced.html">Reinforced Water Activated Tape</a>
+              <a href="non-reinforced.html">Non-Reinforced Water Activated Tape</a>
+            </div>
           </div>
-        </div>
 
-        <a href="applications.html">Applications</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </div>
-    </nav>
-  </div>
-</header>
+          <a href="applications.html">Applications</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero section -->
   <section class="hero">
